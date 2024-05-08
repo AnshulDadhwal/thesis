@@ -1,5 +1,8 @@
 
 # Call the GitHub API to get the look at all the forked repositories of the given repository
+import requests
+
+
 repo_url = "https://api.github.com/repos/{owner}/{repo}/forks"
 owner = "your_username" 
 repo = "your_repository" 
