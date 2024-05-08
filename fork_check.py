@@ -17,9 +17,30 @@ def is_repo_forked(user, repo):
             print(f"Original repository: {original_repo}")
         else:
             print(f"The repository {user}/{repo} is not a fork.")
-    
+        
+        # Extracting owner information
+        owner_info = data.get('owner', {})
+        print("Owner Information:")
+        print(f"Login: {owner_info.get('login', 'Not available')}")
+        print(f"ID: {owner_info.get('id', 'Not available')}")
+        print(f"Type: {owner_info.get('type', 'Not available')}")
+        print(f"URL: {owner_info.get('html_url', 'Not available')}")
+
+        # Check if the repository is archived
+        is_archived = data.get('archived', False)
+        print(f"Archived: {'Yes' if is_archived else 'No'}")
+
+        # Assuming a 'deprecated' tag in topics for deprecation status (as an example)
+        topics = data.get('topics', [])
+        is_deprecated = 'deprecated' in topics
+        print(f"Deprecated: {'Yes' if is_deprecated else 'No'}")
+
     except requests.RequestException as e:
         print(f"Failed to retrieve repository information: {e}")
 
+# Taking user input for the repository owner and the repository name
+user_input = input("Enter the GitHub username of the repository owner: ")
+repo_input = input("Enter the repository name: ")
+
 # Example usage:
-is_repo_forked('oracle', 'macaron')
+is_repo_forked(user_input, repo_input)
