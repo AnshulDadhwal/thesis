@@ -1,22 +1,21 @@
+import os
 import requests
 import json
 from datetime import datetime, timezone
 import re
 
-def print_commit_info(json_file):
-    # Open the JSON file and load the data
-    with open(json_file, 'r') as f:
-        data = json.load(f)
-
+def process_target_info(target):
     # Extract and print the commit_finder_hash and commit_finder_date
-    commit_finder_hash = data.get('target', {}).get('info', {}).get('commit_hash')
-    commit_finder_date = data.get('target', {}).get('info', {}).get('commit_date')
+    commit_finder_hash = target.get('info', {}).get('commit_hash')
+    commit_finder_date = target.get('info', {}).get('commit_date')
 
     print(f"Commit Finder Hash: {commit_finder_hash}")
     print(f"Commit Finder Date: {commit_finder_date}")
+    
+    return commit_finder_hash, commit_finder_date
 
-def extract_group_and_artifact_id(data):
-    full_name = data.get('target', {}).get('info', {}).get('full_name')
+def extract_group_and_artifact_id(info):
+    full_name = info.get('full_name')
     if full_name:
         pattern = r'pkg:maven/([^/]+)/([^@]+)@'
         match = re.search(pattern, full_name)
@@ -63,45 +62,81 @@ def compare_timestamps(commit_finder_date, maven_timestamp):
     time_difference = maven_datetime - commit_finder_datetime
     return time_difference
 
-def store_time_difference(package_name, time_difference, commit_finder_date, latest_version):
+def store_time_difference(package_name, time_difference, commit_finder_date,latest_timestamp, latest_version):
     with open('time.txt', 'a') as f:  # Open in append mode
-        f.write("----------------------------------------Time Difference Information ------------------------------------------\n")
+        f.write(f"-----------------Time Information-----------------\n")
         f.write(f"Package Name - {package_name}\n")
+        f.write(f"Commit Finder Date - {commit_finder_date}\n")
+        f.write(f"Maven Timestamp - {latest_timestamp}\n")
         f.write(f"Time Difference - {time_difference}\n")
-        f.write(f"Version from Commit Finder - {commit_finder_date}\n")
         f.write(f"Latest Version - {latest_version}\n")
         f.write("\n")  # Add a newline for better readability
-    print("time.txt file was updated with the time difference information.")
 
-# Test the function with a JSON file
-json_file = 'caliper.json'
-print_commit_info(json_file)
+def process_json_file(json_file_path):
+    with open(json_file_path, 'r') as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON from {json_file_path}: {e}")
+            return
 
-# Open the JSON file and load the data to extract group_id and artifact_id
-with open(json_file, 'r') as f:
-    data = json.load(f)
-group_id, artifact_id = extract_group_and_artifact_id(data)
+    if isinstance(data, list):
+        for target in data:
+            process_target(target)
+    elif isinstance(data, dict):
+        process_target(data)
+    else:
+        print(f"Unexpected root type in {json_file_path}: {type(data)}")
 
-if group_id and artifact_id:
-    print(f"Group ID: {group_id}")
-    print(f"Artifact ID: {artifact_id}")
+def process_target(target):
+    if not isinstance(target, dict):
+        print(f"Unexpected target type: {type(target)}")
+        return
 
-    # Fetch and print the latest version info
-    json_response = fetch_maven_data(group_id, artifact_id)
-    latest_version, latest_timestamp = get_latest_version_info(json_response)
-    
-    # Extract the commit_finder_date from the JSON file again
-    commit_finder_date = data.get('target', {}).get('info', {}).get('commit_date')
+    targets = target.get('target')
+    if isinstance(targets, list):
+        for item in targets:
+            process_individual_target(item)
+    elif isinstance(targets, dict):
+        process_individual_target(targets)
+    elif targets is None:
+        print(f"Target is None in target: {target}")
+    else:
+        print(f"Unexpected 'target' type: {type(targets)}")
 
-    print("Latest version:", latest_version)
-    print("Timestamp:", latest_timestamp)
-    
-    # Compare the timestamps
-    if commit_finder_date:
+def process_individual_target(target):
+    commit_finder_hash, commit_finder_date = process_target_info(target)
+    group_id, artifact_id = extract_group_and_artifact_id(target.get('info', {}))
+    if group_id and artifact_id and commit_finder_date:
+        print(f"Group ID: {group_id}")
+        print(f"Artifact ID: {artifact_id}")
+
+        # Fetch and print the latest version info
+        json_response = fetch_maven_data(group_id, artifact_id)
+        latest_version, latest_timestamp = get_latest_version_info(json_response)
+
+        print("Latest version:", latest_version)
+        print("Timestamp:", latest_timestamp)
+        
+        # Compare the timestamps
         time_difference = compare_timestamps(commit_finder_date, latest_timestamp)
         package_name = f"{group_id}/{artifact_id}"
         
         # Store the information into time.txt
-        store_time_difference(package_name, time_difference, commit_finder_date, latest_version)
-else:
-    print("Could not extract group_id and artifact_id from the JSON file.")
+        store_time_difference(package_name, time_difference, commit_finder_date, latest_timestamp, latest_version)
+    else:
+        print(f"Could not extract group_id, artifact_id, or commit_finder_date from the JSON data: {target}")
+
+def process_json_files_in_directory(directory):
+    # List all .json files in the directory
+    json_files = [file for file in os.listdir(directory) if file.endswith('.json')]
+    
+    for json_file in json_files:
+        json_file_path = os.path.join(directory, json_file)
+        process_json_file(json_file_path)
+
+# Specify the directory containing JSON files
+directory = r"C:\Users\anshu\Desktop\Anshul\macaron\output\reports\github_com\google\guava"
+
+# Process all JSON files in the directory
+process_json_files_in_directory(directory)
