@@ -62,9 +62,9 @@ def compare_timestamps(commit_finder_date, maven_timestamp):
     time_difference = maven_datetime - commit_finder_datetime
     return time_difference
 
-def store_time_difference(package_name, time_difference, commit_finder_date,latest_timestamp, latest_version):
+def store_time_difference(package_name, time_difference, commit_finder_date, latest_timestamp, latest_version, json_file_name):
     with open('time.txt', 'a') as f:  # Open in append mode
-        f.write(f"-----------------Time Information-----------------\n")
+        f.write(f"-----------------Time Information from {json_file_name}-----------------\n")
         f.write(f"Package Name - {package_name}\n")
         f.write(f"Commit Finder Date - {commit_finder_date}\n")
         f.write(f"Maven Timestamp - {latest_timestamp}\n")
@@ -82,13 +82,13 @@ def process_json_file(json_file_path):
 
     if isinstance(data, list):
         for target in data:
-            process_target(target)
+            process_target(target, os.path.basename(json_file_path))
     elif isinstance(data, dict):
-        process_target(data)
+        process_target(data, os.path.basename(json_file_path))
     else:
         print(f"Unexpected root type in {json_file_path}: {type(data)}")
 
-def process_target(target):
+def process_target(target, json_file_name):
     if not isinstance(target, dict):
         print(f"Unexpected target type: {type(target)}")
         return
@@ -96,15 +96,15 @@ def process_target(target):
     targets = target.get('target')
     if isinstance(targets, list):
         for item in targets:
-            process_individual_target(item)
+            process_individual_target(item, json_file_name)
     elif isinstance(targets, dict):
-        process_individual_target(targets)
+        process_individual_target(targets, json_file_name)
     elif targets is None:
         print(f"Target is None in target: {target}")
     else:
         print(f"Unexpected 'target' type: {type(targets)}")
 
-def process_individual_target(target):
+def process_individual_target(target, json_file_name):
     commit_finder_hash, commit_finder_date = process_target_info(target)
     group_id, artifact_id = extract_group_and_artifact_id(target.get('info', {}))
     if group_id and artifact_id and commit_finder_date:
@@ -123,7 +123,7 @@ def process_individual_target(target):
         package_name = f"{group_id}/{artifact_id}"
         
         # Store the information into time.txt
-        store_time_difference(package_name, time_difference, commit_finder_date, latest_timestamp, latest_version)
+        store_time_difference(package_name, time_difference, commit_finder_date, latest_timestamp, latest_version, json_file_name)
     else:
         print(f"Could not extract group_id, artifact_id, or commit_finder_date from the JSON data: {target}")
 
