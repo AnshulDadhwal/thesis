@@ -1,7 +1,7 @@
 import os
 import requests
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import re
 
 def process_target_info(target):
@@ -62,6 +62,10 @@ def compare_timestamps(commit_finder_date, maven_timestamp):
     time_difference = maven_datetime - commit_finder_datetime
     return time_difference
 
+def is_time_difference_more_than_24_hours(time_difference):
+    # Check if the time difference is more than 24 hours
+    return time_difference > timedelta(hours=24)
+
 def store_time_difference(package_name, time_difference, commit_finder_date, latest_timestamp, latest_version, json_file_name):
     with open('time.txt', 'a') as f:  # Open in append mode
         f.write(f"-----------------Time Information from {json_file_name}-----------------\n")
@@ -70,6 +74,7 @@ def store_time_difference(package_name, time_difference, commit_finder_date, lat
         f.write(f"Maven Timestamp - {latest_timestamp}\n")
         f.write(f"Time Difference - {time_difference}\n")
         f.write(f"Latest Version - {latest_version}\n")
+        f.write(f"Time Difference > 24 hours: {is_time_difference_more_than_24_hours(time_difference)}\n")
         f.write("\n")  # Add a newline for better readability
 
 def process_json_file(json_file_path):
@@ -136,7 +141,7 @@ def process_json_files_in_directory(directory):
         process_json_file(json_file_path)
 
 # Specify the directory containing JSON files
-directory = r"C:\Users\anshu\Desktop\Anshul\macaron\output\reports\github_com\google\guava"
+directory = r"C:\Users\anshu\Desktop\Anshul\macaron\output\reports\github_com\mybatis\mybatis-3"
 
 # Process all JSON files in the directory
 process_json_files_in_directory(directory)
