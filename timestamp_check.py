@@ -133,15 +133,15 @@ def process_individual_target(target, json_file_name):
         print(f"Could not extract group_id, artifact_id, or commit_finder_date from the JSON data: {target}")
 
 def process_json_files_in_directory(directory):
-    # List all .json files in the directory
-    json_files = [file for file in os.listdir(directory) if file.endswith('.json')]
-    
-    for json_file in json_files:
-        json_file_path = os.path.join(directory, json_file)
-        process_json_file(json_file_path)
+    # Walk through all subdirectories
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.json'):
+                json_file_path = os.path.join(root, file)
+                process_json_file(json_file_path)
 
 # Specify the directory containing JSON files
-directory = r"C:\Users\anshu\Desktop\Anshul\macaron\output\reports\github_com\mybatis\mybatis-3"
+directory = r"C:\Users\anshu\Desktop\macaron\output\reports\maven"
 
-# Process all JSON files in the directory
+# Process all JSON files in the directory and subdirectories
 process_json_files_in_directory(directory)
