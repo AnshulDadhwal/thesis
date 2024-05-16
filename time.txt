@@ -1,3 +1,35 @@
+-----------------Time Information from dropwizard-jackrabbit.json-----------------
+Package Name - com.github.justcoke/dropwizard-jackrabbit
+Commit Finder Date - 2017-04-08T06:12:44+02:00
+Maven Timestamp - 2017-04-08T04:36:52+00:00
+Time Difference - 0:24:08
+Latest Version - 1.1.0-rc4
+Time Difference > 24 hours: False
+
+-----------------Time Information from dropwizard-jcr.json-----------------
+Package Name - com.github.justcoke/dropwizard-jcr
+Commit Finder Date - 2017-04-08T06:12:44+02:00
+Maven Timestamp - 2017-04-08T04:36:20+00:00
+Time Difference - 0:23:36
+Latest Version - 1.1.0-rc4
+Time Difference > 24 hours: False
+
+-----------------Time Information from dropwizard-jcr-parent.json-----------------
+Package Name - com.github.justcoke/dropwizard-jcr-parent
+Commit Finder Date - 2017-04-08T06:12:44+02:00
+Maven Timestamp - 2017-04-08T04:35:18+00:00
+Time Difference - 0:22:34
+Latest Version - 1.1.0-rc4
+Time Difference > 24 hours: False
+
+-----------------Time Information from hellocharts-library.json-----------------
+Package Name - com.github.lecho/hellocharts-library
+Commit Finder Date - 2015-09-27T17:29:56+02:00
+Maven Timestamp - 2015-09-27T15:33:40+00:00
+Time Difference - 0:03:44
+Latest Version - 1.5.8
+Time Difference > 24 hours: False
+
 -----------------Time Information from failureaccess.json-----------------
 Package Name - com.google.guava/failureaccess
 Commit Finder Date - 2023-10-16T19:24:23-07:00
@@ -14,3 +46,274 @@ Time Difference - 0:19:21.389000
 Latest Version - 33.2.0-jre
 Time Difference > 24 hours: False
 
+-----------------Time Information from android-async-http.json-----------------
+Package Name - com.loopj.android/android-async-http
+Commit Finder Date - 2020-06-29T09:31:37+02:00
+Maven Timestamp - 2020-06-29T07:16:27+00:00
+Time Difference - -1 day, 23:44:50
+Latest Version - 1.4.11
+Time Difference > 24 hours: False
+
+-----------------Time Information from vjkit.json-----------------
+Package Name - com.vip.vjtools/vjkit
+Commit Finder Date - 2018-12-18T17:25:22+08:00
+Maven Timestamp - 2018-12-18T09:31:56+00:00
+Time Difference - 0:06:34
+Latest Version - 1.0.8
+Time Difference > 24 hours: False
+
+-----------------Time Information from vjmap.json-----------------
+Package Name - com.vip.vjtools/vjmap
+Commit Finder Date - 2018-12-18T17:25:22+08:00
+Maven Timestamp - 2018-12-18T09:38:18+00:00
+Time Difference - 0:12:56
+Latest Version - 1.0.8
+Time Difference > 24 hours: False
+
+-----------------Time Information from vjmxcli.json-----------------
+Package Name - com.vip.vjtools/vjmxcli
+Commit Finder Date - 2018-12-18T17:25:22+08:00
+Maven Timestamp - 2018-12-18T09:40:01+00:00
+Time Difference - 0:14:39
+Latest Version - 1.0.8
+Time Difference > 24 hours: False
+
+-----------------Time Information from vjtools.json-----------------
+Package Name - com.vip.vjtools/vjtools
+Commit Finder Date - 2018-12-18T17:25:22+08:00
+Maven Timestamp - 2018-12-18T09:41:49+00:00
+Time Difference - 0:16:27
+Latest Version - 1.0.8
+Time Difference > 24 hours: False
+
+-----------------Time Information from vjtop.json-----------------
+Package Name - com.vip.vjtools/vjtop
+Commit Finder Date - 2018-12-18T17:25:22+08:00
+Maven Timestamp - 2018-12-18T09:39:25+00:00
+Time Difference - 0:14:03
+Latest Version - 1.0.8
+Time Difference > 24 hours: False
+
+-----------------Time Information from docs.json-----------------
+Package Name - io.dropwizard/docs
+Commit Finder Date - 2019-08-08T08:19:29+02:00
+Maven Timestamp - 2019-08-09T13:38:54+00:00
+Time Difference - 1 day, 7:19:25
+Latest Version - 2.0.0-rc5
+Time Difference > 24 hours: True
+
+-----------------Time Information from dropwizard-assets.json-----------------
+Package Name - io.dropwizard/dropwizard-assets
+Commit Finder Date - 2024-03-06T14:58:55+00:00
+Maven Timestamp - 2024-03-06T15:42:35+00:00
+Time Difference - 0:43:40
+Latest Version - 4.0.7
+Time Difference > 24 hours: False
+
+-----------------Time Information from dropwizard-auth.json-----------------
+Package Name - io.dropwizard/dropwizard-auth
+Commit Finder Date - 2024-03-06T14:58:55+00:00
+Maven Timestamp - 2024-03-06T15:42:41+00:00
+Time Difference - 0:43:46
+Latest Version - 4.0.7
+Time Difference > 24 hours: False
+
+-----------------Time Information from dropwizard-benchmarks.json-----------------
+Package Name - io.dropwizard/dropwizard-benchmarks
+Commit Finder Date - 2015-08-25T21:55:28-04:00
+Maven Timestamp - 2015-08-26T02:03:24+00:00
+Time Difference - 0:07:56
+Latest Version - 0.8.4
+Time Difference > 24 hours: False
+
+-----------------Time Information from dropwizard-bom.json-----------------
+Package Name - io.dropwizard/dropwizard-bom
+Commit Finder Date - 2024-03-06T14:58:55+00:00
+Maven Timestamp - 2024-03-06T15:42:41+00:00
+Time Difference - 0:43:46
+Latest Version - 4.0.7
+Time Difference > 24 hours: False
+
+-----------------Time Information from dropwizard-archetypes.json-----------------
+Package Name - io.dropwizard.archetypes/dropwizard-archetypes
+Commit Finder Date - 2024-03-06T14:59:24+00:00
+Maven Timestamp - 2024-03-09T12:55:17+00:00
+Time Difference - 2 days, 21:55:53
+Latest Version - 3.0.7
+Time Difference > 24 hours: True
+
+-----------------Time Information from java-simple.json-----------------
+Package Name - io.dropwizard.archetypes/java-simple
+Commit Finder Date - 2024-03-06T14:59:24+00:00
+Maven Timestamp - 2024-03-09T12:55:19+00:00
+Time Difference - 2 days, 21:55:55
+Latest Version - 3.0.7
+Time Difference > 24 hours: True
+
+-----------------Time Information from agentweb-core.json-----------------
+Package Name - io.github.justson/agentweb-core
+Commit Finder Date - 2018-01-04T15:18:37+08:00
+Maven Timestamp - 2023-12-09T10:04:13+00:00
+Time Difference - 2165 days, 2:45:36
+Latest Version - v5.1.1-androidx
+Time Difference > 24 hours: True
+
+-----------------Time Information from agentweb-filechooser.json-----------------
+Package Name - io.github.justson/agentweb-filechooser
+Commit Finder Date - 2018-01-04T15:18:37+08:00
+Maven Timestamp - 2023-12-09T10:04:24+00:00
+Time Difference - 2165 days, 2:45:47
+Latest Version - v5.1.1-androidx
+Time Difference > 24 hours: True
+
+-----------------Time Information from camerax.json-----------------
+Package Name - io.github.lucksiege/camerax
+Commit Finder Date - 2023-12-17T18:12:58+08:00
+Maven Timestamp - 2023-12-17T09:58:38+00:00
+Time Difference - -1 day, 23:45:40
+Latest Version - v3.11.2
+Time Difference > 24 hours: False
+
+-----------------Time Information from compress.json-----------------
+Package Name - io.github.lucksiege/compress
+Commit Finder Date - 2023-12-17T18:12:58+08:00
+Maven Timestamp - 2023-12-17T10:00:57+00:00
+Time Difference - -1 day, 23:47:59
+Latest Version - v3.11.2
+Time Difference > 24 hours: False
+
+-----------------Time Information from pictureselector.json-----------------
+Package Name - io.github.lucksiege/pictureselector
+Commit Finder Date - 2023-12-17T18:12:58+08:00
+Maven Timestamp - 2023-12-17T09:55:24+00:00
+Time Difference - -1 day, 23:42:26
+Latest Version - v3.11.2
+Time Difference > 24 hours: False
+
+-----------------Time Information from ucrop.json-----------------
+Package Name - io.github.lucksiege/ucrop
+Commit Finder Date - 2023-12-17T18:12:58+08:00
+Maven Timestamp - 2023-12-17T10:02:45+00:00
+Time Difference - -1 day, 23:49:47
+Latest Version - v3.11.2
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-all.json-----------------
+Package Name - io.github.resilience4j/resilience4j-all
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:15:44.541000+00:00
+Time Difference - -1 day, 23:39:37.541000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-annotations.json-----------------
+Package Name - io.github.resilience4j/resilience4j-annotations
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:15:52.280000+00:00
+Time Difference - -1 day, 23:39:45.280000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-bom.json-----------------
+Package Name - io.github.resilience4j/resilience4j-bom
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:15:58.864000+00:00
+Time Difference - -1 day, 23:39:51.864000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-bulkhead.json-----------------
+Package Name - io.github.resilience4j/resilience4j-bulkhead
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:16:04.245000+00:00
+Time Difference - -1 day, 23:39:57.245000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-cache.json-----------------
+Package Name - io.github.resilience4j/resilience4j-cache
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:16:11.994000+00:00
+Time Difference - -1 day, 23:40:04.994000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-circuitbreaker.json-----------------
+Package Name - io.github.resilience4j/resilience4j-circuitbreaker
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:16:20.199000+00:00
+Time Difference - -1 day, 23:40:13.199000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-circularbuffer.json-----------------
+Package Name - io.github.resilience4j/resilience4j-circularbuffer
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:16:27.409000+00:00
+Time Difference - -1 day, 23:40:20.409000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-commons-configuration.json-----------------
+Package Name - io.github.resilience4j/resilience4j-commons-configuration
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:16:36.269000+00:00
+Time Difference - -1 day, 23:40:29.269000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-consumer.json-----------------
+Package Name - io.github.resilience4j/resilience4j-consumer
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:16:54.935000+00:00
+Time Difference - -1 day, 23:40:47.935000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from resilience4j-core.json-----------------
+Package Name - io.github.resilience4j/resilience4j-core
+Commit Finder Date - 2023-12-17T10:36:07+01:00
+Maven Timestamp - 2023-12-17T09:17:03.297000+00:00
+Time Difference - -1 day, 23:40:56.297000
+Latest Version - 2.2.0
+Time Difference > 24 hours: False
+
+-----------------Time Information from pictureselector.json-----------------
+Package Name - io.github.shichuanenhui/pictureselector
+Commit Finder Date - 2017-01-13T22:14:41+08:00
+Maven Timestamp - 2021-05-11T07:21:14+00:00
+Time Difference - 1578 days, 17:06:33
+Latest Version - 1.1.0
+Time Difference > 24 hours: True
+
+-----------------Time Information from rxjava.json-----------------
+Package Name - io.reactivex/rxjava
+Commit Finder Date - 2018-03-31T17:27:03+02:00
+Maven Timestamp - 2018-03-31T15:36:57+00:00
+Time Difference - 0:09:54
+Latest Version - 1.3.8
+Time Difference > 24 hours: False
+
+-----------------Time Information from rxjava.json-----------------
+Package Name - io.reactivex.rxjava2/rxjava
+Commit Finder Date - 2021-02-13T10:13:43+01:00
+Maven Timestamp - 2021-02-13T09:29:50+00:00
+Time Difference - 0:16:07
+Latest Version - 2.2.21
+Time Difference > 24 hours: False
+
+-----------------Time Information from rxjava.json-----------------
+Package Name - io.reactivex.rxjava3/rxjava
+Commit Finder Date - 2023-09-25T10:00:08+02:00
+Maven Timestamp - 2023-09-29T08:39:46.222000+00:00
+Time Difference - 4 days, 0:39:38.222000
+Latest Version - 3.1.8
+Time Difference > 24 hours: True
+
+-----------------Time Information from glide-transformations.json-----------------
+Package Name - jp.wasabeef/glide-transformations
+Commit Finder Date - 2020-09-27T07:37:31+09:00
+Maven Timestamp - 2021-02-12T10:20:22+00:00
+Time Difference - 138 days, 11:42:51
+Latest Version - 4.3.0
+Time Difference > 24 hours: True
