@@ -21,19 +21,20 @@ print(df.head())
 repo_correctness = df['Is the repo link correct?'].value_counts()
 
 plt.figure(figsize=(10, 6))
-repo_correctness.plot(kind='bar', color=['green', 'red'])
-plt.title('Correct vs Incorrect Repository Links')
+repo_correctness.plot(kind='bar', color=['#67ede7', '#fce85d', '#ff9933'])  # Lighter green, yellow, and orange
+plt.title('Correct vs Incorrect Repository Links (npm)')
 plt.xlabel('Repository Link Correctness')
 plt.ylabel('Number of Packages')
 plt.xticks(rotation=0)
+plt.grid(axis='y', alpha=0.3)  # Add gridlines to the y-axis with less opacity
 plt.show()
 
 # Pie Chart: Packages Having the Repository as a Related Package
 related_package_repo = df['Does it have the repo as related package?'].value_counts()
 
 plt.figure(figsize=(8, 8))
-related_package_repo.plot(kind='pie', autopct='%1.1f%%', startangle=140, colors=['lightblue', 'lightgreen'])
-plt.title('Packages Having the Repository as a Related Package')
+related_package_repo.plot(kind='pie', autopct='%1.1f%%', startangle=140, colors=['#aaf42c', '#52f24a'])  # Light green shades
+plt.title('Packages Declaring the Main Repository in Their Metadata (npm)')
 plt.ylabel('')
 plt.show()
 
@@ -41,7 +42,7 @@ plt.show()
 origin_link_correctness = df['Is the origin link correct (npmjs)?'].value_counts()
 
 plt.figure(figsize=(8, 8))
-origin_link_correctness.plot(kind='pie', autopct='%1.1f%%', startangle=140, colors=['lightblue', 'lightcoral'])
-plt.title('Correctness of Origin Links (npmjs)')
+origin_link_correctness.plot(kind='pie', autopct='%1.1f%%', startangle=140, colors=['#ff3377', '#4c00a4'])  # Pink and purple
+plt.title('Correctness of Origin Links (npm)')
 plt.ylabel('')
 plt.show()
