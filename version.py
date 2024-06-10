@@ -20,7 +20,7 @@ def process_csv_file(filepath, output_file):
     with open(filepath, mode='r', newline='', encoding='utf-8') as file, open(output_file, mode='w', newline='', encoding='utf-8') as outfile:
         reader = csv.reader(file)
         writer = csv.writer(outfile)
-        writer.writerow(['group_id', 'artifact_id', 'version'])  # Write header
+        writer.writerow(['group_id', 'artifact_id', 'version'])
         for row in reader:
             if len(row) < 2:
                 print(f"Skipping incomplete row: {row}")
@@ -35,5 +35,4 @@ def process_csv_file(filepath, output_file):
             except ValueError:
                 print(f"Skipping invalid row: {row}")
 
-# Replace 'path_to_your_csv_file.csv' and 'output_file.csv' with actual paths
 process_csv_file('./maven_150.csv', './maven_latest_versions.csv')
