@@ -32,6 +32,5 @@ def process_csv_file(filepath, output_file):
                 print(f"Skipping invalid row: {row}")
                 outfile.write(f"Invalid format in row, skipped: {row}\n")
 
-# Replace 'path_to_your_csv_file.csv' and 'output_file.txt' with actual paths
 process_csv_file('./maven_150.csv', './maven_versions.txt')
 
